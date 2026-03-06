@@ -82,28 +82,29 @@ fun PantallaA(navController: NavController){
                         }
                     }
                 ) {
-         Row(
-                 modifier = Modifier
-                       .fillMaxWidth()
-                      .padding(16.dp),
-                 verticalAlignment = Alignment.CenterVertically
-           ) {
-        val imagenId = imagenesEquipos[nombre]
-        if (imagenId != null) {
-            Image(
-                painter = painterResource(id = imagenId),
-                contentDescription = nombre,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(end = 16.dp)
-            )
-        }
-        Text(
-            text = nombre,
-            fontSize = 20.sp,
-            color = if (estaseleccionados) Color.Red else Color.Black
-        )
-    }
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        val imagenId = imagenesEquipos[nombre]
+                        if (imagenId != null) {
+                            Image(
+                                painter = painterResource(id = imagenId),
+                                contentDescription = nombre,
+                                modifier = Modifier
+                                    .size(80.dp)
+                            )
+                        }
+                        Text(
+                            text = nombre,
+                            fontSize = 20.sp,
+                            color = if (estaseleccionados) Color.Red else Color.Black,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        )
+                    }
                 }
             }
         }
